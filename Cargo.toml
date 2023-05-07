@@ -1,0 +1,19 @@
+[package]
+name = "service1"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[[bin]] # Bin to run the HelloWorld gRPC server
+name = "service1"
+path = "src/server.rs"
+
+[dependencies]
+tonic = "0.9"
+prost = "0.11"
+tokio = { version = "1.0", features = ["macros", "rt-multi-thread"] }
+log = "0.4.17"
+
+[build-dependencies]
+tonic-build = "0.9"
